@@ -12,14 +12,18 @@
   align-items: center;
 }
 
-.container-grid {
+.container > div {
   border: 1px solid black;
   height: 25px;
   width: 25px;
 }
 
-.container-grid:nth-child(17n + 1) {
+.container > div:nth-child(17n + 1) {
   width: 100%;
   border: 0;
   height: 0;
 }
+
+/* .container-grid:hover {
+  background-color: black;
+} */
