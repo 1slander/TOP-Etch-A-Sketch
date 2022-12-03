@@ -6,6 +6,7 @@ const container = document.querySelector(".container");
 const btnSize = document.querySelector("#grid-size");
 const showGridSize = document.querySelector(".show-grid-size");
 const clearBtn = document.querySelector("#clearBtn");
+const randomBtn = document.querySelector("#randomColors");
 showGridSize.textContent = `Actual size: ${gridSizeNum} x ${gridSizeNum}`;
 let squareColor = "black";
 let randomColorBtn = "off";
@@ -65,7 +66,11 @@ let addSquares = function () {
   const squares = Array.from(document.querySelectorAll(".column"));
   squares.forEach((square) =>
     square.addEventListener("mouseenter", function (event) {
-      event.target.style.backgroundColor = squareColor;
+      if (randomColorBtn == "off") {
+        event.target.style.backgroundColor = squareColor;
+      } else {
+        event.target.style.backgroundColor = rndColor();
+      }
     })
   );
 };
@@ -85,8 +90,24 @@ const rndColor = function () {
   let R = Math.floor(Math.random() * 256);
   let G = Math.floor(Math.random() * 256);
   let B = Math.floor(Math.random() * 256);
-  return `rgb(${R}), ${G}, ${B}`;
+  return `rgb(${R}, ${G}, ${B})`;
 };
+
+// 9. Change random colour btn on
+
+randomBtn.addEventListener("click", function () {
+  if (randomColorBtn == "off") {
+    randomColorBtn = "on";
+    randomBtn.style.backgroundColor = "green";
+    randomBtn.textContent = "Random ON";
+  } else {
+    randomColorBtn = "off";
+    randomBtn.style.backgroundColor = "red";
+    randomBtn.textContent = "Random OFF";
+  }
+  console.log(randomColorBtn);
+});
+
 // let userInput = "";
 // Add Grid = 16x16
 
