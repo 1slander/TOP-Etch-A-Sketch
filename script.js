@@ -10,7 +10,7 @@ showGridSize.textContent = `Actual size: ${gridSizeNum} x ${gridSizeNum}`;
 let squareColor = "black";
 let randomColorBtn = "off";
 
-// Prompt user the grid size of choice
+// 4. Prompt user the grid size of choice
 
 btnSize.addEventListener("click", function () {
   let userInput = window.prompt("Select a grid size between 1-100", "16");
@@ -30,7 +30,7 @@ btnSize.addEventListener("click", function () {
   }
 });
 
-// Empty grid before changing size
+// 5. Empty grid before changing size
 
 const emptyGrid = function removeGrid(board) {
   while (container.firstChild) {
@@ -38,7 +38,7 @@ const emptyGrid = function removeGrid(board) {
   }
 };
 
-// Clear grid
+// 6. Clear grid
 
 const clearGrid = function () {
   const clearSquare = Array.from(document.querySelectorAll(".column"));
@@ -49,7 +49,7 @@ clearBtn.addEventListener("click", function () {
   clearGrid();
 });
 
-// Add the squares in the container
+// 1. Add the squares in the container
 
 let addSquares = function () {
   const row = document.createElement("div");
@@ -60,7 +60,7 @@ let addSquares = function () {
     column.classList.add("column");
     row.append(column);
   }
-  // Change grid color on mouse enter
+  // 7. Change grid color on mouse enter
 
   const squares = Array.from(document.querySelectorAll(".column"));
   squares.forEach((square) =>
@@ -69,17 +69,24 @@ let addSquares = function () {
     })
   );
 };
-// Fill the Grid
+// 2. Fill the Grid
 let gridFill = function (num) {
   for (let i = 0; i < num; i++) {
     addSquares();
   }
 };
 
-// Use provide grid size to fill de board
+// 3. Use provide grid size to fill de board
 
 gridFill(gridSizeNum);
 
+// 8. Create random color generator
+const rndColor = function () {
+  let R = Math.floor(Math.random() * 256);
+  let G = Math.floor(Math.random() * 256);
+  let B = Math.floor(Math.random() * 256);
+  return `rgb(${R}), ${G}, ${B}`;
+};
 // let userInput = "";
 // Add Grid = 16x16
 
