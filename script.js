@@ -24,6 +24,19 @@ let addSquares = function () {
   }
   // 7. Change grid color on mouse enter
 
+  // 1st code I did try
+  //   const squares = document.querySelectorAll(".column");
+  //   for (let i = 0; i < squares.length; i++) {
+  //     squares[i].addEventListener("mouseenter", function () {
+  //       if (randomColorBtn == "off") {
+  //         squares[i].style.backgroundColor = squareColor;
+  //       } else {
+  //         squares[i].style.backgroundColor = rndColor();
+  //       }
+  //     });
+  //   }
+  // };
+
   const squares = Array.from(document.querySelectorAll(".column"));
   squares.forEach((square) =>
     square.addEventListener("mouseenter", function (event) {
@@ -35,6 +48,7 @@ let addSquares = function () {
     })
   );
 };
+
 // 2. Fill the Grid
 let gridFill = function (num) {
   for (let i = 0; i < num; i++) {
@@ -80,10 +94,23 @@ const clearGrid = function () {
   const clearSquare = Array.from(document.querySelectorAll(".column"));
   clearSquare.forEach((square) => (square.style.backgroundColor = "white"));
 };
+// Clear Btn event:
 
 clearBtn.addEventListener("click", function () {
   clearGrid();
 });
+
+// 1st code:
+// const clearGrid = function () {
+//   const clearSquare = Array.from(document.querySelectorAll(".column"));
+// console.log(clearSquare.length);
+// for (let i=0; i<clearSquare.length; i++){
+//   clearSquare[i].style.backgroundColor = 'white'
+// };
+// Clear btn event:
+// clearBtn.addEventListener("click", function () {
+//   clearGrid();
+// });
 
 // 8. Create random color generator
 const rndColor = function () {
@@ -98,11 +125,11 @@ const rndColor = function () {
 randomBtn.addEventListener("click", function () {
   if (randomColorBtn == "off") {
     randomColorBtn = "on";
-    randomBtn.style.backgroundColor = "green";
+    randomBtn.style.backgroundColor = "#5c8001";
     randomBtn.textContent = "Random ON";
   } else {
     randomColorBtn = "off";
-    randomBtn.style.backgroundColor = "red";
+    randomBtn.style.backgroundColor = "#D62828";
     randomBtn.textContent = "Random OFF";
   }
   console.log(randomColorBtn);

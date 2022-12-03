@@ -6,11 +6,11 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: ;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #264653;
 }
 
 /* Header */
@@ -20,6 +20,7 @@ body {
 
 .header > h1 {
   font-size: 50px;
+  color: #f77f00;
 }
 
 /* Button Menu */
@@ -28,7 +29,7 @@ body {
 }
 
 #randomColors {
-  background-color: red;
+  background-color: #d62828;
 }
 
 /* Grid Size Button */
@@ -38,38 +39,35 @@ body {
   font-size: 20px;
   border-radius: 5px;
   margin: 10px;
+  background-color: #e9c46a;
+  cursor: pointer;
+}
+
+.menu > button:hover {
+  filter: brightness(200%);
 }
 /* Grid size messge */
 .show-grid-size {
   padding: 10px;
-  margin: 10px;
-  font-size: 18px;
+  margin: 10px 10px 40px 10px;
+  font-size: 32px;
+  font-weight: bold;
+  color: #f4a261;
 }
 
 /* Board */
 .container {
   display: flex;
   flex-direction: column;
-  min-height: 400px;
-  width: 400px;
+  min-height: 600px;
+  width: 600px;
   background-color: white;
 }
 .row,
 .column {
-  border: 1px solid grey;
+  border: 1px solid lightgray;
   flex-grow: 1;
 }
 .row {
   display: flex;
 }
-/* .container > div {
-  border: 1px solid black;
-  height: 25px;
-  width: 25px;
-}
-
-.container > div:nth-child(17n + 1) {
-  width: 100%;
-  border: 0;
-  height: 0;
-} */
